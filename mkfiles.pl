@@ -1054,11 +1054,11 @@ if (defined $makefiles{'vstudio10'} || defined $makefiles{'vstudio12'} || define
     }
 
     if (defined $makefiles{'vstudio15'}) {
-        create_vs_solution('vstudio15', "2017", "15.00", "v141");
+        create_vs_solution('vstudio15', "2017", "12.00", "v141");
     }
 
     if (defined $makefiles{'vstudio16'}) {
-        create_vs_solution('vstudio16', "2019", "16.00", "v142");
+        create_vs_solution('vstudio16', "2019", "12.00", "v142");
     }
 
     sub create_vs_solution {
