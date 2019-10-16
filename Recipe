@@ -23,6 +23,8 @@
 !makefile devcppproj windows/DEVCPP
 !makefile vstudio10 windows/VS2010
 !makefile vstudio12 windows/VS2012
+!makefile vstudio15 windows/VS2017
+!makefile vstudio16 windows/VS2019
 # Source directories.
 !srcdir charset/
 !srcdir windows/

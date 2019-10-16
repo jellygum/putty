@@ -269,7 +269,7 @@ sub mfval($) {
     # prints a warning and returns false;
     if (grep { $type eq $_ }
         ("vc","vcproj","cygwin","lcc","devcppproj","gtk","unix",
-         "am","osx","vstudio10","vstudio12","clangcl")) {
+         "am","osx","vstudio10","vstudio12","vstudio15","vstudio16","clangcl")) {
         return 1;
     }
     warn "$.:unknown makefile type '$type'\n";
@@ -1041,7 +1041,7 @@ if (defined $makefiles{'vcproj'}) {
     }
 }
 
-if (defined $makefiles{'vstudio10'} || defined $makefiles{'vstudio12'}) {
+if (defined $makefiles{'vstudio10'} || defined $makefiles{'vstudio12'} || defined $makefiles{'vstudio15'} || defined $makefiles{'vstudio16'}) {
 
     ##-- Visual Studio 2010+ Solution and Projects
 
@@ -1051,6 +1051,14 @@ if (defined $makefiles{'vstudio10'} || defined $makefiles{'vstudio12'}) {
 
     if (defined $makefiles{'vstudio12'}) {
         create_vs_solution('vstudio12', "2012", "12.00", "v110");
+    }
+
+    if (defined $makefiles{'vstudio15'}) {
+        create_vs_solution('vstudio15', "2017", "15.00", "v141");
+    }
+
+    if (defined $makefiles{'vstudio16'}) {
+        create_vs_solution('vstudio16', "2019", "16.00", "v142");
     }
 
     sub create_vs_solution {
